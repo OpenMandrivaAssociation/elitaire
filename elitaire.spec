@@ -14,6 +14,7 @@ BuildRoot: 	%{_tmppath}/%{name}-buildroot
 BuildRequires:	evas-devel >= 0.9.9.050, ewl-devel >= 0.5.3.050
 BuildRequires:	ecore-devel >= 0.9.9.050, edje-devel >= 0.5.0.050, edje >= 0.5.0.050
 BuildRequires:	eet >= 1.1.0, esmart >= 0.9.0.050, esmart-devel >= 0.9.0.050
+Buildrequires:	embryo >= 0.9.9.050
 BuildRequires:  desktop-file-utils
 Buildrequires:  gettext-devel
 
