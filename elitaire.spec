@@ -18,6 +18,7 @@ BuildRequires:  desktop-file-utils
 
 
 %description
+Enlightenment solitaire
 
 %prep
 rm -rf $RPM_BUILD_ROOT
