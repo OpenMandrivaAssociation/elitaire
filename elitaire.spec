@@ -1,6 +1,7 @@
 %define	name	elitaire
 %define version 0.1
-%define release %mkrel 1
+%define svnrel	40987
+%define release %mkrel 2.r%{svnrel}.1
 
 Summary: 	Enlightenment solitaire
 Name: 		%{name}
@@ -9,7 +10,7 @@ Release: 	%{release}
 License: 	BSD
 Group: 		Graphics
 URL: 		http://get-e.org/
-Source: 	%{name}-%{version}.tar.bz2
+Source: 	%{name}-%{version}-r%{svnrel}.tar.bz2
 BuildRoot: 	%{_tmppath}/%{name}-buildroot
 BuildRequires:	evas-devel >= 0.9.9.050, ewl-devel >= 0.5.3.050
 BuildRequires:	ecore-devel >= 0.9.9.050, edje-devel >= 0.5.0.050, edje >= 0.5.0.050
@@ -18,13 +19,11 @@ Buildrequires:	embryo >= 0.9.9.050
 BuildRequires:  desktop-file-utils
 Buildrequires:  gettext-devel
 
-
 %description
 Enlightenment solitaire
 
 %prep
-rm -rf $RPM_BUILD_ROOT
-%setup -q
+%setup -qn %{name}
 
 %build
 ./autogen.sh
@@ -33,14 +32,10 @@ rm -rf $RPM_BUILD_ROOT
 
 %install
 rm -rf $RPM_BUILD_ROOT
-%makeinstall
+%makeinstall_std
 
 # %lang(fr) /usr/share/locale/fr/LC_MESSAGES/elitaire.mo
 %find_lang %{name}
-for mo in `ls %buildroot%_datadir/locale/` ;
-do Y=`echo -n $mo | sed -e "s|/||"`;
-echo "%lang($Y) $(echo %_datadir/locale/${mo}/LC_MESSAGES/%{name}.mo)" >> $RPM_BUILD_DIR/%{name}-%{version}/%{name}.lang
-done
 
 mkdir -p %buildroot%{_datadir}/pixmaps
 mkdir -p %buildroot%{_datadir}/applications
