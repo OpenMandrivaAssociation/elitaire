@@ -1,6 +1,6 @@
 %define	name	elitaire
 %define version 0.1
-%define svnrel	40987
+%define svnrel	41637
 %define release %mkrel 2.r%{svnrel}.1
 
 Summary: 	Enlightenment solitaire
@@ -11,6 +11,7 @@ License: 	BSD
 Group: 		Graphics
 URL: 		http://get-e.org/
 Source: 	%{name}-%{version}-r%{svnrel}.tar.bz2
+Patch0:		elitaire-0.1-gcc44.patch
 BuildRoot: 	%{_tmppath}/%{name}-buildroot
 BuildRequires:	evas-devel >= 0.9.9.050, ewl-devel >= 0.5.3.050
 BuildRequires:	ecore-devel >= 0.9.9.050, edje-devel >= 0.5.0.050, edje >= 0.5.0.050
@@ -24,11 +25,12 @@ Enlightenment solitaire
 
 %prep
 %setup -qn %{name}
+%patch0 -p0
 
 %build
-./autogen.sh
+NOCONFIGURE=yes ./autogen.sh
 %configure2_5x
-%make
+make
 
 %install
 rm -rf $RPM_BUILD_ROOT
