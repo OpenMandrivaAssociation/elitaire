@@ -1,7 +1,7 @@
 %define	name	elitaire
 %define version 0.1
 %define svnrel	41637
-%define release %mkrel 2.r%{svnrel}.1
+%define release %mkrel 2.r%{svnrel}.2
 
 Summary: 	Enlightenment solitaire
 Name: 		%{name}
