@@ -1,0 +1,31 @@
+--- src/eli_app.cpp~	2009-08-08 05:50:19.000000000 +0200
++++ src/eli_app.cpp	2009-08-08 05:50:28.000000000 +0200
+@@ -12,7 +12,7 @@
+ static int _eli_app_config_listen_cb(const char * key, 
+                const Ecore_Config_Type type,
+                const int tag, void *data);
+-static char * theme_cut_off_suffix(const char * file);
++static char * theme_cut_off_suffix(char * file);
+ 
+ /* allocate memory for eap */
+ Eli_App * eli_app_new(void)
+@@ -419,7 +419,7 @@
+     return dirs_array;
+ }
+ 
+-static char * theme_cut_off_suffix(const char * file)
++static char * theme_cut_off_suffix(char * file)
+ {
+     char * new_file, * pt;
+     char * end;
+--- src/intl.h~	2007-06-08 19:32:49.000000000 +0200
++++ src/intl.h	2009-08-08 05:47:32.000000000 +0200
+@@ -16,7 +16,7 @@
+ # define gettext(str) ((char*) (str))
+ #endif
+ 
+-inline char * sgettext(const char *msgid)
++inline char * sgettext(char *msgid)
+ {
+ 	char *msgval = gettext (msgid);
+ 	if (msgval == msgid)
