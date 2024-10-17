@@ -9,7 +9,7 @@ Version: 	%{version}
 Release: 	%{release}
 License: 	BSD
 Group: 		Graphics
-URL: 		http://get-e.org/
+URL: 		https://get-e.org/
 Source: 	%{name}-%{version}-r%{svnrel}.tar.bz2
 Patch0:		elitaire-0.1-gcc44.patch
 BuildRoot: 	%{_tmppath}/%{name}-buildroot
