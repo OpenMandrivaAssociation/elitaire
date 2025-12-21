@@ -13,6 +13,11 @@ URL: 		https://get-e.org/
 Source: 	%{name}-%{version}-r%{svnrel}.tar.bz2
 Patch0:		elitaire-0.1-gcc44.patch
 BuildRoot: 	%{_tmppath}/%{name}-buildroot
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 BuildRequires:	evas-devel >= 0.9.9.050, ewl-devel >= 0.5.3.050
 BuildRequires:	ecore-devel >= 0.9.9.050, edje-devel >= 0.5.0.050, edje >= 0.5.0.050
 BuildRequires:	eet >= 1.1.0, esmart >= 0.9.0.050, esmart-devel >= 0.9.0.050
